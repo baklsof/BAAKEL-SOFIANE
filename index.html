@@ -36,6 +36,57 @@
       color: #1e3a8a;
       font-weight: bold;
     }
+     /* Glassmorphism Cards */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  }
+
+  .glass-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .glass-card h5 a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .glass-card h5 a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-demo {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-top: 10px;
+    border-radius: 50px;
+    background: #4a90e2;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-demo:hover {
+    background: #357ab8;
+    transform: translateY(-3px);
+  }
+
+  .section-title i {
+    margin-right: 8px;
+  }
     .experience-item {
       background: #fff;
       border-left: 6px solid #1e3a8a;
@@ -115,7 +166,7 @@
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/130" alt="Sofiane Baakel" />
+   
     <h1>Sofiane Baakel</h1>
     <h4>Développeur PHP / Symfony / Full-Stack</h4>
     <p><i class="fas fa-envelope"></i> sofiane@example.com |
@@ -255,39 +306,80 @@
       </div>
     </section>
 
-    <!-- REALISATIONS CLES -->
-    <section id="portfolio">
-      <h2 class="section-title"><i class="fas fa-project-diagram"></i> Réalisations Clés</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="portfolio-card">
-            <img src="https://via.placeholder.com/400x200" alt="Projet 1">
-            <div class="card-body">
-              <h5>Projet 1</h5>
-              <p>Description du projet 1.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-card">
-            <img src="https://via.placeholder.com/400x200" alt="Projet 2">
-            <div class="card-body">
-              <h5>Projet 2</h5>
-              <p>Description du projet 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-card">
-            <img src="https://via.placeholder.com/400x200" alt="Projet 3">
-            <div class="card-body">
-              <h5>Projet 3</h5>
-              <p>Description du projet 3.</p>
-            </div>
-          </div>
+  <!-- REALISATIONS CLES -->
+<section id="portfolio" class="py-5" style="background-color: #f8f9fa;">
+  <h2 class="section-title text-center mb-5" style="color: #4a90e2;"><i class="fas fa-project-diagram"></i> Réalisations Clés</h2>
+  <div class="row justify-content-center">
+    <!-- CCS-ONLINE -->
+    <div class="col-md-4 mb-4">
+      <div class="portfolio-card glass-card">
+        <img src="ccs-online.jpg" alt="ccs-online" class="img-fluid rounded-top">
+        <div class="card-body">
+          <h5><a href="https://ccs-online.fr/" target="_blank" rel="noopener noreferrer">CCS-Online</a></h5>
+          <p>Plateforme en ligne pour la gestion et le suivi des services de consulting.</p>
+          <a href="https://www.youtube.com/watch?v=EHhd3bHQLsc" target="_blank" class="btn btn-demo">Voir la démo</a>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- TOP DELIVERY -->
+    <div class="col-md-4 mb-4">
+      <div class="portfolio-card glass-card">
+        <img src="topdelivery.jpg" alt="Top Delivery" class="img-fluid rounded-top">
+        <div class="card-body">
+          <h5><div href="https://top-delivery.fr/" target="_blank" rel="noopener noreferrer">Top Delivery</div></h5>
+          <p>Système de gestion des livraisons et planification avec interface client et livreur.</p>
+          <a href="https://www.youtube.com/watch?v=MyUf3_HOKOY" target="_blank" class="btn btn-demo">Voir la démo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AZUL.FR -->
+    <div class="col-md-4 mb-4">
+      <div class="portfolio-card glass-card">
+        <img src="azul.jpg" alt="azul.fr" class="img-fluid rounded-top">
+        <div class="card-body">
+          <h5><a href="https://www.azul.fr/" target="_blank" rel="noopener noreferrer">Azul.fr</a></h5>
+          <p>Boutique e-commerce créée en PHP Symfony avec interface utilisateur intuitive.</p>
+          <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn btn-demo">Voir la démo</a>
+        </div>
+      </div>
+    </div>
+      <!-- BS hydrmanager -->
+    <div class="col-md-4 mb-4">
+      <div class="portfolio-card glass-card">
+        <img src="bs-hydromanager.jpg" alt="azul.fr" class="img-fluid rounded-top">
+        <div class="card-body">
+          <h5><div href="" target="_blank" rel="noopener noreferrer">BS-hydromanager</div></h5>
+          <p>Logiciel de gestion de projets hydrauliques pour planifier, suivre et optimiser les opérations.</p>
+       
+        </div>
+      </div>
+    </div>
+          <!-- AZUL.FR -->
+    <div class="col-md-4 mb-4">
+      <div class="portfolio-card glass-card">
+        <img src="azul.jpg" alt="azul.fr" class="img-fluid rounded-top">
+        <div class="card-body">
+          <h5><a href="https://www.azul.fr/" target="_blank" rel="noopener noreferrer">Azul.fr</a></h5>
+          <p>Boutique e-commerce créée en PHP Symfony avec interface utilisateur intuitive.</p>
+          <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn btn-demo">Voir la démo</a>
+        </div>
+      </div>
+    </div>
+           <!-- AZUL.FR -->
+    <div class="col-md-4 mb-4">
+      <div class="portfolio-card glass-card">
+        <img src="azul.jpg" alt="azul.fr" class="img-fluid rounded-top">
+        <div class="card-body">
+          <h5><a href="https://www.azul.fr/" target="_blank" rel="noopener noreferrer">Azul.fr</a></h5>
+          <p>Boutique e-commerce créée en PHP Symfony avec interface utilisateur intuitive.</p>
+          <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn btn-demo">Voir la démo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   </div>
 
   <footer>
