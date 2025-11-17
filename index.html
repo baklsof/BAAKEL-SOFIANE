@@ -3,246 +3,639 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV Sofiane Baakel</title>
+  <title>CV Sofiane Baakel - Développeur Full-Stack</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DIN+Next+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3a0ca3;
+      --accent: #4cc9f0;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4bb543;
+    }
+    
     body {
-      background-color: #f4f6f8;
-      font-family: "DIN Next Arabic", Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
     }
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
+    
+    /* Header Styles */
+    .cv-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 3rem 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    header img {
-      width: 130px;
-      height: 130px;
+    
+    .cv-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+    
+    .profile-img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 4px solid #fff;
+      border: 5px solid rgba(255, 255, 255, 0.3);
       object-fit: cover;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .name-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    
+    .job-title {
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+    
+    .contact-icon {
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover .contact-icon {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+    
+    /* Main Content */
+    .cv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .cv-section {
+      background: white;
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid var(--primary);
+    }
+    
+    .cv-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
+    }
+    
+    .section-title i {
+      background: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    
+    /* Description Section */
+    .description-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid var(--accent);
+    }
+    
+    .description-section h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .description-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #4a5568;
+    }
+    
+    /* Experience Items */
+    .experience-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .experience-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       margin-bottom: 1rem;
     }
-    header h1 { font-size: 2.2rem; font-weight: bold; }
-    header h4 { font-weight: 400; margin-bottom: 1rem; }
-    header a { color: #ffc107; text-decoration: none; }
-    .section-title {
-      border-bottom: 3px solid #1e3a8a;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: #1e3a8a;
-      font-weight: bold;
+    
+    .experience-title {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
     }
-     /* Glassmorphism Cards */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .glass-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  }
-
-  .glass-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .glass-card h5 a {
-    color: #4a90e2;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .glass-card h5 a:hover {
-    text-decoration: underline;
-  }
-
-  .btn-demo {
-    display: inline-block;
-    padding: 8px 18px;
-    margin-top: 10px;
-    border-radius: 50px;
-    background: #4a90e2;
-    color: white;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .btn-demo:hover {
-    background: #357ab8;
-    transform: translateY(-3px);
-  }
-
-  .section-title i {
-    margin-right: 8px;
-  }
-    .experience-item {
-      background: #fff;
-      border-left: 6px solid #1e3a8a;
-      border-radius: 10px;
-      padding: 2rem;
-      margin-bottom: 1.8rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: 0.3s;
+    
+    .experience-company {
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
     }
-    .experience-item:hover { transform: translateY(-5px); box-shadow: 0 8px 18px rgba(0,0,0,0.1); }
-    .experience-item h4 { color: #1e3a8a; font-weight: bold; margin-bottom: 0.5rem; }
-    .experience-item p strong { color: #1e3a8a; }
-    .experience-item ul { margin-top: 0.8rem; }
-    .competence-badge {
-      display: inline-block;
-      background: #e9ecef;
-      border-radius: 25px;
-      padding: 0.4rem 1rem;
-      margin: 0.3rem;
-      transition: all 0.2s ease-in-out;
+    
+    .experience-period {
+      background: var(--primary);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
       font-size: 0.9rem;
-      color: #333;
+      font-weight: 500;
     }
-    .competence-badge:hover { background: #1e3a8a; color: #fff; transform: scale(1.05); }
-    .portfolio-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: 0.3s ease;
-      border: none;
-      margin-bottom: 1.5rem;
+    
+    .experience-details {
+      margin-top: 1rem;
     }
-    .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-    .portfolio-card img { height: 200px; width: 100%; object-fit: cover; }
-    .portfolio-card .card-body { padding: 1rem; }
-    .portfolio-card h5 { font-weight: bold; color: #1e3a8a; }
-    .portfolio-card p { font-size: 0.9rem; color: #555; }
-    .timeline { position: relative; padding-left: 2rem; }
+    
+    .experience-details ul {
+      padding-left: 1.5rem;
+    }
+    
+    .experience-details li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    
+    .experience-details li::marker {
+      color: var(--primary);
+    }
+    
+    /* Skills Section */
+    .skill-category {
+      margin-bottom: 2rem;
+    }
+    
+    .skill-category h5 {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    
+    .skill-badge {
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      border-radius: 30px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .skill-badge:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill-badge i {
+      font-size: 1rem;
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    
     .timeline::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 20px;
-      width: 4px;
+      left: 15px;
+      width: 3px;
       height: 100%;
-      background: #1e3a8a;
+      background: var(--primary);
+      border-radius: 3px;
     }
+    
     .timeline-item {
       position: relative;
       margin-bottom: 2rem;
       padding-left: 2rem;
     }
+    
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -12px;
-      top: 0;
-      width: 24px;
-      height: 24px;
-      background: #1e3a8a;
+      left: -10px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
       border-radius: 50%;
-      border: 4px solid #fff;
+      border: 4px solid white;
+      box-shadow: 0 0 0 3px var(--primary);
     }
-    .timeline-item h5 { font-weight: bold; margin-bottom: 0.3rem; color: #1e3a8a; }
-    .timeline-item p { margin: 0; font-size: 0.9rem; color: #555; }
-    footer {
-      background: #1e3a8a;
-      color: #fff;
+    
+    .timeline-item h5 {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+    
+    .timeline-item p {
+      margin: 0;
+      color: #6c757d;
+    }
+    
+    /* Portfolio */
+    .portfolio-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem 0;
+    }
+    
+    .portfolio-title {
       text-align: center;
-      padding: 1.5rem 1rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .portfolio-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .portfolio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .portfolio-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .portfolio-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .portfolio-title-card {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+    
+    .portfolio-description {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .portfolio-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .btn-portfolio {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      flex: 1;
+      justify-content: center;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Footer */
+    .cv-footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
       margin-top: 3rem;
     }
-    footer a { color: #ffc107; text-decoration: none; margin: 0 0.5rem; }
-    section { margin-bottom: 3rem; }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-   
-    <h1>Sofiane Baakel</h1>
-    <h4>Développeur PHP / Symfony / Full-Stack</h4>
-    <p><i class="fas fa-envelope"></i> baklsof@gmail.com |
-      <i class="fas fa-phone"></i> +33 6 65 95 33 37 |
-      <i class="fab fa-github"></i> <a href="https://github.com/bakl-15">GitHub</a>
-    </p>
+  <!-- Header -->
+  <header class="cv-header text-center">
+    <div class="container">
+      <h1 class="name-title">Sofiane Baakel</h1>
+      <h2 class="job-title">Développeur PHP / Symfony / Full-Stack</h2>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <a href="mailto:baklsof@gmail.com">baklsof@gmail.com</a>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <a href="tel:+33665953337">+33 6 65 95 33 37</a>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <a href="https://github.com/bakl-15" target="_blank">GitHub</a>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <span>France</span>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <div class="container my-5">
-    <!-- EXPÉRIENCES PROFESSIONNELLES -->
-    <section id="experience">
+  <!-- Main Content -->
+  <div class="cv-container">
+    <!-- Description Section -->
+    <section class="description-section">
+      <h3><i class="fas fa-user-tie"></i> Profil Professionnel</h3>
+      <p>
+        Développeur Full-Stack passionné avec plus de 4 ans d'expérience dans le développement d'applications web et desktop. 
+        Spécialisé en PHP/Symfony, je maîtrise la conception et la réalisation de solutions techniques robustes, 
+        des APIs RESTful aux interfaces utilisateur intuitives. Mon expertise couvre également le développement front-end 
+        avec JavaScript, React et les technologies modernes du web. Polyvalent et rigoureux, je suis à l'aise 
+        dans des environnages techniques variés et j'apprécie particulièrement les défis techniques complexes.
+      </p>
+    </section>
+
+    <!-- Expériences Professionnelles -->
+    <section class="cv-section">
       <h2 class="section-title"><i class="fas fa-briefcase"></i> Expériences Professionnelles</h2>
 
       <div class="experience-item">
-        <h4>Développeur Symfony PHP Symfony</h4>
-        <p><strong>CONSULTING CONSEIL SERVICES</strong> – Septembre 2021 à Octobre 2023.</p>
-        <ul>
-          <li>Analyse des besoins exprimés sur cahier des charges, et concevoir des solutions avec l’équipe.</li>
-          <li>Maintenance et correction des bugs, et faire évoluer les fonctionnalités existantes pour améliorer le fonctionnement.</li>
-          <li>Diagnostic du besoin des utilisateurs afin de leur présenter une interface ergonomique.</li>
-          <li>Tests unitaires.</li>
-          <li>Rédaction des spécifications techniques.</li>
-          <li>Travail en équipe autour de la création des nouvelles fonctionnalités ( idées , contenu …etc).</li>
-          <li>Former certains utilisateurs sur l’utilisation de l’application.</li>
-          <li>Création de nouvelles fonctionnalités telles que :
-            <ul>
-              <li>Système de prise de RDV via Full Calendar</li>
-              <li>Système de facturation (fonctionnalité du téléchargement de la facture avec DOMPDF)</li>
-              <li>Système newsletter (composant Messenger de Symfony et Rabbit)</li>
-              <li>Formulaires de la création et mise à jour du profil utilisateur</li>
-              <li>Création d’une API à l’aide d’API Platform et le système d’authentification JWT</li>
-            </ul>
-          </li>
-        </ul>
+        <div class="experience-header">
+          <div>
+            <h3 class="experience-title">Développeur Symfony PHP Symfony</h3>
+            <p class="experience-company">CONSULTING CONSEIL SERVICES</p>
+          </div>
+          <span class="experience-period">Sept 2021 - Oct 2023</span>
+        </div>
+        <div class="experience-details">
+          <ul>
+            <li>Analyse des besoins exprimés sur cahier des charges, et concevoir des solutions avec l'équipe.</li>
+            <li>Maintenance et correction des bugs, et faire évoluer les fonctionnalités existantes pour améliorer le fonctionnement.</li>
+            <li>Diagnostic du besoin des utilisateurs afin de leur présenter une interface ergonomique.</li>
+            <li>Tests unitaires.</li>
+            <li>Rédaction des spécifications techniques.</li>
+            <li>Travail en équipe autour de la création des nouvelles fonctionnalités ( idées , contenu …etc).</li>
+            <li>Former certains utilisateurs sur l'utilisation de l'application.</li>
+            <li>Création de nouvelles fonctionnalités telles que :
+              <ul>
+                <li>Système de prise de RDV via Full Calendar</li>
+                <li>Système de facturation (fonctionnalité du téléchargement de la facture avec DOMPDF)</li>
+                <li>Système newsletter (composant Messenger de Symfony et Rabbit)</li>
+                <li>Formulaires de la création et mise à jour du profil utilisateur</li>
+                <li>Création d'une API à l'aide d'API Platform et le système d'authentification JWT</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="experience-item">
-        <h4>Développeur Full-Stack (PHP/Symfony)</h4>
-        <p><strong>Top DELIVERY</strong> | 2024 -- 09/2025</p>
-        <ul>
-          <li>Technologies : API REST, Symfony 7.2, PHP 8.3, Twig, MySQL, Mercure, Messenger, Twilio, Mailjet, Google Maps API, Stripe, API S3 (AWS)</li>
-          <li>Espace client et espace livreur avec authentification sécurisée (FOSUserBundle)</li>
-          <li>Signature électronique de contrats intégrée, validation par OTP (SMS + email)</li>
-          <li>Système de gestion des documents (upload, validation, suivi)</li>
-          <li>Module de planification et de groupage de missions, calculs selon type de camion, poids, volume et type de mission</li>
-          <li>Intégration Google Maps API pour géolocalisation et optimisation des trajets</li>
-          <li>Notifications multi-canaux gérées via Symfony Messenger et Mercure</li>
-          <li>Back-office complet pour l’administration (utilisateurs, contrats, documents, notifications)</li>
-          <li>Design responsive avec interface utilisateur intuitive basée sur Twig et Bootstrap</li>
-        </ul>
+        <div class="experience-header">
+          <div>
+            <h3 class="experience-title">Développeur Full-Stack (PHP/Symfony)</h3>
+            <p class="experience-company">Top DELIVERY</p>
+          </div>
+          <span class="experience-period">2024 - Sept 2025</span>
+        </div>
+        <div class="experience-details">
+          <ul>
+            <li>Technologies : API REST, Symfony 7.2, PHP 8.3, Twig, MySQL, Mercure, Messenger, Twilio, Mailjet, Google Maps API, Stripe, API S3 (AWS)</li>
+            <li>Espace client et espace livreur avec authentification sécurisée (FOSUserBundle)</li>
+            <li>Signature électronique de contrats intégrée, validation par OTP (SMS + email)</li>
+            <li>Système de gestion des documents (upload, validation, suivi)</li>
+            <li>Module de planification et de groupage de missions, calculs selon type de camion, poids, volume et type de mission</li>
+            <li>Intégration Google Maps API pour géolocalisation et optimisation des trajets</li>
+            <li>Notifications multi-canaux gérées via Symfony Messenger et Mercure</li>
+            <li>Back-office complet pour l'administration (utilisateurs, contrats, documents, notifications)</li>
+            <li>Design responsive avec interface utilisateur intuitive basée sur Twig et Bootstrap</li>
+          </ul>
+        </div>
       </div>
 
       <div class="experience-item">
-        <h4>Technicien Télécom & Développeur FREELANCE</h4>
-        <p><strong>CARRE CONCEPT</strong> | 2023 -- 2024</p>
-        <ul>
-          <li>Raccordement, soudures et mesures avec réflectomètre (OTDR)</li>
-          <li>Participation à la maintenance préventive et corrective des infrastructures</li>
-          <li>Lecture et mise à jour des plans techniques et schémas de câblage</li>
-          <li>Création d'une boutique e-commerce (www.azul.fr), en PHP Symfony, Bootstrap, JavaScript</li>
-        </ul>
+        <div class="experience-header">
+          <div>
+            <h3 class="experience-title">Technicien Télécom & Développeur FREELANCE</h3>
+            <p class="experience-company">CARRE CONCEPT</p>
+          </div>
+          <span class="experience-period">2023 - 2024</span>
+        </div>
+        <div class="experience-details">
+          <ul>
+            <li>Raccordement, soudures et mesures avec réflectomètre (OTDR)</li>
+            <li>Participation à la maintenance préventive et corrective des infrastructures</li>
+            <li>Lecture et mise à jour des plans techniques et schémas de câblage</li>
+            <li>Création d'une boutique e-commerce (www.azul.fr), en PHP Symfony, Bootstrap, JavaScript</li>
+          </ul>
+        </div>
       </div>
 
       <div class="experience-item">
-        <h4>Développeur C#, VB NET (DESKTOP)</h4>
-        <p><strong>BS service plus</strong> | 2015 -- 2018</p>
-        <ul>
-          <li>Application : Gestion des stocks, Gestion d’une école…etc</li>
-          <li>Site vitrine (CMS WordPress)</li>
-          <li>Site vitrine en HTML, CSS, Javascript</li>
-        </ul>
+        <div class="experience-header">
+          <div>
+            <h3 class="experience-title">Développeur C#, VB NET (DESKTOP)</h3>
+            <p class="experience-company">BS service plus</p>
+          </div>
+          <span class="experience-period">2015 - 2018</span>
+        </div>
+        <div class="experience-details">
+          <ul>
+            <li>Application : Gestion des stocks, Gestion d'une école…etc</li>
+            <li>Site vitrine (CMS WordPress)</li>
+            <li>Site vitrine en HTML, CSS, Javascript</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- FORMATIONS -->
-    <section id="formations">
+    <!-- Formations -->
+    <section class="cv-section">
       <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formations</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -259,8 +652,8 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications">
+    <!-- Certifications -->
+    <section class="cv-section">
       <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -278,119 +671,176 @@
       </div>
     </section>
 
-    <!-- COMPETENCES CLES -->
-    <section id="competences">
+    <!-- Compétences -->
+    <section class="cv-section">
       <h2 class="section-title"><i class="fas fa-laptop-code"></i> Compétences Clés</h2>
-      <div class="mb-3">
-        <span class="competence-badge"><strong>LANGAGES DE PROGRAMMATION</strong></span><br>
-        <span class="competence-badge">HTML&CSS: BOOTSTRAP, Tailwind CSS</span>
-        <span class="competence-badge">JAVASCRIPT : Vanilla JS , jquery</span>
-        <span class="competence-badge">PHP : TWIG</span>
-        <span class="competence-badge">C#, VB net (desktop)</span>
-        <span class="competence-badge">SQL, DQL, Eloquent et Java</span>
+      
+      <div class="skill-category">
+        <h5><i class="fas fa-code"></i> Langages de Programmation</h5>
+        <div class="skills-container">
+          <span class="skill-badge"><i class="fab fa-html5"></i> HTML & CSS</span>
+          <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+          <span class="skill-badge"><i class="fab fa-php"></i> PHP</span>
+          <span class="skill-badge"><i class="fas fa-code"></i> C#</span>
+          <span class="skill-badge"><i class="fas fa-database"></i> SQL, DQL, Eloquent</span>
+          <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
+        </div>
       </div>
-      <div class="mb-3">
-        <span class="competence-badge"><strong>TECHNOLOGIES</strong></span><br>
-        <span class="competence-badge">SYMFONY</span>
-        <span class="competence-badge">API REST, API PLATFORM</span>
-        <span class="competence-badge">REACT</span>
-        <span class="competence-badge">EXPRESS JS</span>
-        <span class="competence-badge">WPF, MAUI & WINFORM</span>
+      
+      <div class="skill-category">
+        <h5><i class="fas fa-cogs"></i> Technologies & Frameworks</h5>
+        <div class="skills-container">
+          <span class="skill-badge"><i class="fab fa-symfony"></i> Symfony</span>
+          <span class="skill-badge"><i class="fas fa-plug"></i> API REST, API Platform</span>
+          <span class="skill-badge"><i class="fab fa-react"></i> React</span>
+          <span class="skill-badge"><i class="fab fa-node-js"></i> Express JS</span>
+          <span class="skill-badge"><i class="fab fa-microsoft"></i> WPF, MAUI & WinForm</span>
+          <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+          <span class="skill-badge"><i class="fab fa-laravel"></i> Laravel</span>
+        </div>
       </div>
-      <div class="mb-3">
-        <span class="competence-badge"><strong>AUTRES</strong></span><br>
-        <span class="competence-badge">SGBD : MYSQL, SQL server, PostgreSQL & MongoDB</span>
-        <span class="competence-badge">CMS : WORDPRESS</span>
-        <span class="competence-badge">DESIGN : PHOTOSHOP, Adobe XD</span>
-        <span class="competence-badge">OUTILS : Git, Docker, Shell, RabbitMQ, Redis, Mercure et Trello</span>
+      
+      <div class="skill-category">
+        <h5><i class="fas fa-tools"></i> Outils & Environnements</h5>
+        <div class="skills-container">
+          <span class="skill-badge"><i class="fas fa-database"></i> MySQL, SQL Server, PostgreSQL</span>
+          <span class="skill-badge"><i class="fas fa-leaf"></i> MongoDB</span>
+          <span class="skill-badge"><i class="fab fa-wordpress"></i> WordPress</span>
+          <span class="skill-badge"><i class="fas fa-paint-brush"></i> Photoshop, Adobe XD</span>
+          <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
+          <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
+          <span class="skill-badge"><i class="fas fa-server"></i> RabbitMQ, Redis, Mercure</span>
+        </div>
       </div>
     </section>
-
-  <!-- REALISATIONS CLES -->
-<section id="portfolio" class="py-5" style="background-color: #f8f9fa;">
-  <h2 class="section-title text-center mb-5" style="color: #4a90e2;"><i class="fas fa-project-diagram"></i> Réalisations Clés</h2>
-  <div class="row justify-content-center">
-    <!-- CCS-ONLINE -->
-    <div class="col-md-4 mb-4">
-      <div class="portfolio-card glass-card">
-        <img src="ccs-online.jpg" alt="ccs-online" class="img-fluid rounded-top">
-        <div class="card-body">
-          <h5><a href="https://ccs-online.fr/" target="_blank" rel="noopener noreferrer">CCS-Online</a></h5>
-          <p>Plateforme en ligne pour la gestion et le suivi des services de consulting.</p>
-          <a href="https://www.youtube.com/watch?v=EHhd3bHQLsc" target="_blank" class="btn btn-demo">Voir la démo</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- TOP DELIVERY -->
-    <div class="col-md-4 mb-4">
-      <div class="portfolio-card glass-card">
-        <img src="topdelivery.jpg" alt="Top Delivery" class="img-fluid rounded-top">
-        <div class="card-body">
-          <h5><div href="https://top-delivery.fr/" target="_blank" rel="noopener noreferrer">Top Delivery</div></h5>
-          <p>Système de gestion des livraisons et planification avec interface client et livreur.</p>
-          <a href="https://www.youtube.com/watch?v=MyUf3_HOKOY" target="_blank" class="btn btn-demo">Voir la démo</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- AZUL.FR -->
-    <div class="col-md-4 mb-4">
-      <div class="portfolio-card glass-card">
-        <img src="azul.jpg" alt="azul.fr" class="img-fluid rounded-top">
-        <div class="card-body">
-          <h5><a href="https://www.azul.fr/" target="_blank" rel="noopener noreferrer">Azul.fr</a></h5>
-          <p>Boutique e-commerce créée en PHP Symfony avec interface utilisateur intuitive.</p>
-          <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn btn-demo">Voir la démo</a>
-        </div>
-      </div>
-    </div>
-      <!-- BS hydrmanager -->
-    <div class="col-md-4 mb-4">
-      <div class="portfolio-card glass-card">
-        <img src="bs-hydromanager.jpg" alt="azul.fr" class="img-fluid rounded-top">
-        <div class="card-body">
-          <h5><div href="" target="_blank" rel="noopener noreferrer">BS-hydromanager</div></h5>
-          <p>Logiciel de gestion de projets hydrauliques pour planifier, suivre et optimiser les opérations.</p>
-       
-        </div>
-      </div>
-    </div>
-          <!-- PORTFOLIO -->
-    <div class="col-md-4 mb-4">
-      <div class="portfolio-card glass-card">
-        <img src="portfolio.jpg" alt="azul.fr" class="img-fluid rounded-top">
-        <div class="card-body">
-          <h5><div target="_blank" rel="noopener noreferrer">Portfolio 3D</div></h5>
-          <p><a href="https://github.com/bakl-15/portfolio-react">Code source (REACT JS)</a></p>
-          <a href="https://www.youtube.com/watch?v=MB3inA_RGUY" target="_blank" class="btn btn-demo">Voir la démo</a>
-        </div>
-      </div>
-    </div>
-           <!-- INFO -->
-    <div class="col-md-4 mb-4">
-      <div class="portfolio-card glass-card">
-        <img src="info.jpg" alt="azul.fr" class="img-fluid rounded-top">
-        <div class="card-body">
-          <h5><a href="https://www.lejourdalgerie.com/" target="_blank" rel="noopener noreferrer">le jour d'algerie</a></h5>
-          <p>Le Jour d’Algérie est un quotidien algérien francophone privé, basé à Alger. Son site officiel,.</p>
-          <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn btn-demo">Voir la démo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Sofiane Baakel. 
-      <a href="https://github.com/baklsof"><i class="fab fa-github"></i> GitHub</a>
-      <a href="mailto:sofiane@example.com"><i class="fas fa-envelope"></i> Email</a>
-    </p>
+  <!-- Portfolio -->
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="portfolio-title"><i class="fas fa-project-diagram"></i> Réalisations Clés</h2>
+      
+      <div class="portfolio-grid">
+        <!-- CCS-ONLINE -->
+        <div class="portfolio-card">
+          <img src="ccs-online.jpg" alt="CCS-Online" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title-card">CCS-Online</h3>
+            <p class="portfolio-description">Plateforme en ligne pour la gestion et le suivi des services de consulting.</p>
+            <div class="portfolio-actions">
+              <a href="https://ccs-online.fr/" target="_blank" class="btn-portfolio btn-primary">
+                <i class="fas fa-external-link-alt"></i> Voir le site
+              </a>
+              <a href="https://www.youtube.com/watch?v=EHhd3bHQLsc" target="_blank" class="btn-portfolio btn-outline">
+                <i class="fas fa-play-circle"></i> Démo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- TOP DELIVERY -->
+        <div class="portfolio-card">
+          <img src="topdelivery.jpg" alt="Top Delivery" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title-card">Top Delivery</h3>
+            <p class="portfolio-description">Système de gestion des livraisons et planification avec interface client et livreur.</p>
+            <div class="portfolio-actions">
+              <a href="https://top-delivery.fr/" target="_blank" class="btn-portfolio btn-primary">
+                <i class="fas fa-external-link-alt"></i> Voir le site
+              </a>
+              <a href="https://www.youtube.com/watch?v=MyUf3_HOKOY" target="_blank" class="btn-portfolio btn-outline">
+                <i class="fas fa-play-circle"></i> Démo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- AZUL.FR -->
+        <div class="portfolio-card">
+          <img src="azul.jpg" alt="Azul.fr" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title-card">Azul.fr</h3>
+            <p class="portfolio-description">Boutique e-commerce créée en PHP Symfony avec interface utilisateur intuitive.</p>
+            <div class="portfolio-actions">
+              <a href="https://www.azul.fr/" target="_blank" class="btn-portfolio btn-primary">
+                <i class="fas fa-external-link-alt"></i> Voir le site
+              </a>
+              <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn-portfolio btn-outline">
+                <i class="fas fa-play-circle"></i> Démo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- BS HYDROMANAGER -->
+        <div class="portfolio-card">
+          <img src="bs-hydromanager.jpg" alt="BS Hydromanager" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title-card">BS Hydromanager</h3>
+            <p class="portfolio-description">Logiciel de gestion de projets hydrauliques pour planifier, suivre et optimiser les opérations.</p>
+            <div class="portfolio-actions">
+              <a href="#" class="btn-portfolio btn-primary">
+                <i class="fas fa-info-circle"></i> Détails
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PORTFOLIO 3D -->
+        <div class="portfolio-card">
+          <img src="portfolio.jpg" alt="Portfolio 3D" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title-card">Portfolio 3D</h3>
+            <p class="portfolio-description">Portfolio interactif avec effets 3D créé avec React.js.</p>
+            <div class="portfolio-actions">
+              <a href="https://github.com/bakl-15/portfolio-react" target="_blank" class="btn-portfolio btn-primary">
+                <i class="fab fa-github"></i> Code source
+              </a>
+              <a href="https://www.youtube.com/watch?v=MB3inA_RGUY" target="_blank" class="btn-portfolio btn-outline">
+                <i class="fas fa-play-circle"></i> Démo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LE JOUR D'ALGERIE -->
+        <div class="portfolio-card">
+          <img src="info.jpg" alt="Le Jour d'Algérie" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title-card">Le Jour d'Algérie</h3>
+            <p class="portfolio-description">Site officiel du quotidien algérien francophone privé, basé à Alger.</p>
+            <div class="portfolio-actions">
+              <a href="https://www.lejourdalgerie.com/" target="_blank" class="btn-portfolio btn-primary">
+                <i class="fas fa-external-link-alt"></i> Voir le site
+              </a>
+              <a href="https://www.youtube.com/watch?v=Uy91zHK5hOQ&t=65s" target="_blank" class="btn-portfolio btn-outline">
+                <i class="fas fa-play-circle"></i> Démo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cv-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:baklsof@gmail.com" class="footer-link">
+          <i class="fas fa-envelope"></i> baklsof@gmail.com
+        </a>
+        <a href="tel:+33665953337" class="footer-link">
+          <i class="fas fa-phone"></i> +33 6 65 95 33 37
+        </a>
+        <a href="https://github.com/bakl-15" target="_blank" class="footer-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+      <p>&copy; 2025 Sofiane Baakel. Tous droits réservés.</p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
